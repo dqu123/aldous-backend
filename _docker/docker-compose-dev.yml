@@ -1,0 +1,10 @@
+# docker-compose-dev.yml
+version: '3.9'
+services:
+  database:
+    container_name: 'aldous_backend_database_container'
+    image: 'postgres' # use latest official postgres version
+    env_file:
+      - ../_env/dev/database.env # configure postgres
+    ports:
+      - 5432:5432
