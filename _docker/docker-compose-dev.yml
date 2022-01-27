@@ -8,3 +8,5 @@ services:
       - ../_env/dev/database.env # configure postgres
     ports:
       - 5432:5432
+    volumes:
+      - "./data/dev:/var/lib/postgresql/data"
