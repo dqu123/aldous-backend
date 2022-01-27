@@ -16,6 +16,10 @@ build/
 .vscode
 !.vscode/tasks.js
 
+
+# Docker data
+_docker/data/
+
 # JetBrains IDEs
 .idea/
 
@@ -27,3 +31,4 @@ build/
 
 # Misc
 .DS_Store
+
