@@ -1,0 +1,19 @@
+default: # default connection
+  type: "postgres"
+  host: "localhost"
+  port: 5432
+  username: "postgres
+  password: "local"
+  database: "aldous_backend_db"
+  entities: ["build/src/entities/**/*.js"]
+  migrations: ["build/src/migrations/*.js"]
+
+test: # used for unit tests
+  type: "postgres"
+  host: "localhost"
+  port: 5432
+  username: "postgres"
+  password: "test"
+  database: "aldous_backend_test_db"
+  entities: ["build/src/entities/**/*.js"]
+  migrations: ["build/src/migrations/*.js"]

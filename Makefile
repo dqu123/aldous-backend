@@ -1,13 +1,13 @@
-.PHONY: compose-up
-compose-up:
-	docker-compose -f _docker/docker-compose-dev.yml up
+.PHONY: dev-compose-up
+dev-compose-up:
+	docker-compose -f _docker/docker-compose-dev.yml up --detach
 
-.PHONY: compose-down
-compose-down:
+.PHONY: dev-compose-down
+dev-compose-down:
 	docker-compose -f _docker/docker-compose-dev.yml down
 
-.PHONY: db-docker-bash
-db-docker-bash:
+.PHONY: dev-db-bash
+dev-db-bash:
 	docker exec -it aldous_backend_database_container bash
 
 .PHONY: docker-psql
@@ -25,3 +25,16 @@ run-migrations:
 .PHONY: compile
 compile:
 	npm run build
+
+# Test commands
+.PHONY: start-test-db
+start-test-db:
+	docker-compose -f _docker/docker-compose-test.yml up --detach
+
+.PHONY: quit-test-db
+quit-test-db:
+	docker-compose -f _docker/docker-compose-test.yml down
+
+.PHONY: test-db-bash
+test-db-bash:
+	docker exec -it aldous_backend_test_database_container bash
