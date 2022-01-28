@@ -29,8 +29,8 @@
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "ENV=test jest --coverage",
+    "test:watch": "ENV=test jest --watch"
   },
   "author": "David Qu <dqu123@users.noreply.github.com>",
   "license": "MIT"

@@ -5,7 +5,7 @@ services:
     container_name: 'aldous_backend_database_container'
     image: 'postgres' # use latest official postgres version
     env_file:
-      - ../_env/dev/database.env # configure postgres
+      - ../_env/dev.env
     ports:
       - 5432:5432
     volumes:

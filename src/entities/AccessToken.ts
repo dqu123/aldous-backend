@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
-import { getManager, Column, PrimaryGeneratedColumn, Entity } from 'typeorm';
+import { Column, PrimaryGeneratedColumn, Entity } from 'typeorm';
+import { getEntityManager } from '../db/entityManager';
 
 @Entity()
 export class AccessToken {
@@ -30,7 +31,7 @@ export class AccessToken {
 }
 
 export async function createAccessToken(accessToken: Partial<AccessToken>): Promise<AccessToken> {
-  const entityManager = await getManager();
+  const entityManager = getEntityManager();
   const newAccessToken = new AccessToken(accessToken);
   await entityManager.save(newAccessToken)
   return newAccessToken;
